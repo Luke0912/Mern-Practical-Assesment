@@ -3,6 +3,7 @@ import Button from "@mui/material/Button";
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import configuration from "../../config";
 
 import { AuthContext } from "../../contexts/Authcontext";
 
@@ -31,7 +32,10 @@ export const Login = () => {
   const submitHandler = async (e) => {
     try {
       e.preventDefault();
-      const resp = await axios.post("http://localhost:5000/login", details);
+      const resp = await axios.post(
+        configuration.BASE_URL.concat("/login"),
+        details
+      );
       const id = resp.data.user._id;
       if (resp.status !== 201) {
         throw new Error("Unable to login");

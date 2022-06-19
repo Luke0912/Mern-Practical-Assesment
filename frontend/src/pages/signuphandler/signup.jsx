@@ -3,6 +3,7 @@ import Button from "@mui/material/Button";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import configuration from "../../config";
 
 export const Signup = () => {
   const navigate = useNavigate();
@@ -27,9 +28,13 @@ export const Signup = () => {
     e.preventDefault();
     const headers = { "Content-Type": "application/json" };
     try {
-      const resp = await axios.post("http://localhost:5000/register", details, {
-        headers: headers,
-      });
+      const resp = await axios.post(
+        configuration.BASE_URL.concat("/register"),
+        details,
+        {
+          headers: headers,
+        }
+      );
       console.log(resp);
       navigate("/Login");
     } catch (error) {

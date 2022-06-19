@@ -7,6 +7,7 @@ import { useState, useContext } from "react";
 import axios from "axios";
 import { AuthContext } from "../../contexts/Authcontext";
 import UserRecipes from "../../components/UserRecipes/UserRecipes";
+import configuration from "../../config";
 
 const theme = createTheme({
   palette: {
@@ -24,7 +25,7 @@ export const Home = () => {
   const [item, setItem] = useState([]);
 
   const handleView = () => {
-    axios.get("http://localhost:5000/product").then((data) => {
+    axios.get(configuration.BASE_URL.concat("/product")).then((data) => {
       setItem(data.data);
     });
     handleRender(false);
@@ -36,7 +37,7 @@ export const Home = () => {
   };
 
   const handleViewUser = () => {
-    axios.get(`http://localhost:5000/product/${id}`).then((data) => {
+    axios.get(configuration.BASE_URL.concat(`/product/${id}`)).then((data) => {
       setItem(data.data);
     });
     handleRender(true);

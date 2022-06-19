@@ -5,6 +5,8 @@ import axios from "axios";
 
 import { AuthContext } from "../../contexts/Authcontext";
 
+import configuration from "../../config";
+
 export const Form = () => {
   const { id } = useContext(AuthContext);
 
@@ -33,7 +35,7 @@ export const Form = () => {
       console.log(details);
       e.preventDefault();
       const resp = await axios.post(
-        "http://localhost:5000/createproduct",
+        configuration.BASE_URL.concat("/createproduct"),
         details
       );
       console.log(resp);
