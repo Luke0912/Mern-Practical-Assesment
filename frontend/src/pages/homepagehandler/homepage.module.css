@@ -1,0 +1,45 @@
+.main {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.add {
+  width: 30%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.view {
+  width: 30%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.viewall {
+  width: 30%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.list {
+  width: 90%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 10px;
+  margin: auto;
+}
+
+.listitems p {
+  color: grey;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.listitems {
+  color: orange;
+  font-size: large;
+  height: 250px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
